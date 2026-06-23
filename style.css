@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: #00ff88;
+}
+
+/* BACKGROUND VIDEO */
+#bgFull {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.3);
+}
+
+/* MENU */
+#menu {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MENU BOX */
+.menu-box {
+    background: rgba(0,0,0,0.65);
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 40px #00ff88;
+    animation: floatBox 3s ease-in-out infinite;
+}
+
+/* FLOAT EFFECT */
+@keyframes floatBox {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* OMNITRIX ICON */
+.omnitrix {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    background: radial-gradient(circle,#00ff88,#001a0f);
+    box-shadow: 0 0 40px #00ff88;
+    animation: spin 4s linear infinite, pulse 1.5s infinite alternate;
+}
+
+@keyframes spin {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes pulse {
+    from { box-shadow: 0 0 20px #00ff88; }
+    to { box-shadow: 0 0 60px #00ff88; }
+}
+
+/* TITLE */
+h1 {
+    margin-top: 15px;
+    text-shadow: 0 0 20px #00ff88;
+}
+
+/* DROPDOWN */
+select {
+    margin: 15px;
+    padding: 10px;
+    background: black;
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+select:hover {
+    box-shadow: 0 0 15px #00ff88;
+}
+
+/* BUTTON */
+button {
+    padding: 15px 40px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #00ff88, #003322);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00ff88;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00ff88;
+}
+
+/* BUTTON CLICK */
+button:active {
+    transform: scale(0.95);
+}
+
+/* HUD */
+#hud {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hud-box {
+    padding: 10px 25px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff88;
+    animation: glowText 1.5s infinite alternate;
+}
+
+@keyframes glowText {
+    from { box-shadow: 0 0 10px #00ff88; }
+    to { box-shadow: 0 0 30px #00ff88; }
+}
+
+/* GAME BOX */
+#gameBox {
+    position: relative;
+    width: 720px;
+    height: 480px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 20px #00ff88, inset 0 0 20px #00ff88;
+    animation: borderGlow 2s infinite alternate;
+}
+
+@keyframes borderGlow {
+    from { box-shadow: 0 0 10px #00ff88, inset 0 0 10px #00ff88; }
+    to { box-shadow: 0 0 40px #00ff88, inset 0 0 30px #00ff88; }
+}
+
+/* VIDEO INSIDE */
+#bgBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.4);
+}
+
+/* GLOW OVERLAY */
+#glowOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle, rgba(0,255,136,0.2), transparent 70%);
+}
+
+/* LIGHT SWEEP */
+#gameBox::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(0,255,136,0.4), transparent);
+    animation: sweep 3s infinite;
+    z-index: 2;
+}
+
+@keyframes sweep {
+    0% { left: -100%; }
+    100% { left: 150%; }
+}
+
+/* CANVAS */
+#gameCanvas {
+    position: absolute;
+    z-index: 3;
+    background: transparent;
+}
+
+/* MOBILE CONTROLS */
+#mobileControls {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#mobileControls button {
+    font-size: 25px;
+    padding: 15px;
+    background: rgba(0,0,0,0.7);
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    border-radius: 10px;
+}

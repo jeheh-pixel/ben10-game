@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ben 10 Breakout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<video autoplay loop id="bgFull">
+    <source src="ben10.mp4" type="video/mp4">
+</video>
+
+<div id="menu">
+    <div class="menu-box">
+        <div class="omnitrix"></div>
+
+        <h1>🟢 BEN 10 BREAKOUT</h1>
+
+        <select id="alienSelect">
+            <option value="normal">Normal</option>
+            <option value="xlr8">⚡ XLR8</option>
+            <option value="fourarms">💪 Four Arms</option>
+            <option value="heatblast">🔥 Heatblast</option>
+        </select>
+
+        <button id="playBtn">START GAME</button>
+    </div>
+</div>
+
+<div id="gameContainer" style="display:none;">
+
+<div id="hud">
+    <div class="hud-box">
+        <span id="scoreText">SCORE: 0</span>
+    </div>
+</div>
+
+<div id="gameBox">
+    <video loop id="bgBox">
+        <source src="ben10.mp4" type="video/mp4">
+    </video>
+
+    <div id="glowOverlay"></div>
+    <canvas id="gameCanvas" width="720" height="480"></canvas>
+</div>
+
+
+</div>
+
+<audio id="powerSound" src="power.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
